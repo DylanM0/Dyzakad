@@ -59,6 +59,9 @@ if uploaded_file:
     
     dfc = df1.groupby(['모집단위'])['산출등급'].agg([np.min,np.mean,percentile(50),percentile(70),percentile(80),percentile(90),np.max])
     
+    dfc1 = dfc.reset_index()
+    
+    
     st.table(dfc)
     
      
@@ -71,7 +74,7 @@ if uploaded_file:
 
     # -- DOWNLOAD SECTION
     st.subheader('Downloads:')
-    generate_excel_download_link(dfc)
+    generate_excel_download_link(dfc1)
 #   generate_html_download_link(m)
 
 
