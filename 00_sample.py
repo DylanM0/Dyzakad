@@ -47,10 +47,12 @@ if uploaded_file:
     choice = df['전형명'].unique()
     
     
-    choice_column = st.selectbox('선택해주세요',choice, )    
+    choice_column = st.selectbox('선택해주세요',choice, )
+    
+    df0 = df[df['등록여부'] == '입학자']
     
     
-    df1 = df[df['전형명'] == choice_column]
+    df1 = df0[df0['전형명'] == choice_column]
     
     
     
@@ -67,9 +69,9 @@ if uploaded_file:
 
 
     # -- DOWNLOAD SECTION
-     st.subheader('Downloads:')
-     generate_excel_download_link(dfc)
-#     generate_html_download_link(m)
+    st.subheader('Downloads:')
+    generate_excel_download_link(dfc)
+#   generate_html_download_link(m)
 
 
 
