@@ -56,16 +56,9 @@ if uploaded_file:
     
     dfc = df1.groupby(['모집단위'])['산출등급'].agg([np.max,np.mean, percentile(70),percentile(80),percentile(90),np.min])
     
+    st.table(dfc)
     
-    
-       
-    
-  
-    
-    
-    
-    
-    
+     
     
 
     # -- GROUP DATAFRAME
