@@ -15,8 +15,8 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 load_dotenv()
 
 # API 설정
-API_KEY = os.getenv('API_KEY')
-BASE_URL = os.getenv('BASE_URL')
+API_KEY = st.secrets["API_KEY"] if "API_KEY" in st.secrets else os.getenv('API_KEY')
+BASE_URL = st.secrets["BASE_URL"] if "BASE_URL" in st.secrets else os.getenv('BASE_URL')
 
 # API 타입 정의
 API_TYPES = {
